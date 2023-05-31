@@ -74,6 +74,8 @@
           <h2 class="icon fa-file-alt">Uygun Biletler</h2>
 
           {% for ticket in bus_tickets %}
+          {% if search['location'] == ticket.departure.title() and search['journey'] == ticket.destination.title() and search['selected_date'] == ticket.date %}
+
           <!-- Excerpt -->
           <article class="excerpt">
             <a href="#" class="image left"
@@ -103,6 +105,7 @@
               >
             </div>
           </article>
+          {% endif %}
           {% endfor %}
         </section>
       </div>
